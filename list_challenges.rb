@@ -132,7 +132,27 @@ end
 
 # puts either_2_4([2, 5, 4])
 
-# def max_span(list)
+def max_span(list)
+    list_position = 0
+    span = 0
+    max_span = 1
+    list.each do |x|
+        list.length.times do |i|
+            if x == list[-i-1]
+                span = (list.length-i-1) - list_position
+                if span > max_span
+                    max_span = span
+                end
+            end
+        end
+        list_position += 1
+    end
+    return max_span
+end 
+
+# puts max_span([1])
+# puts max_span([1, 2, 3, 4, 1])
+# puts max_span([2, 2, 3, 5, 6, 2])
 
 def g_happy(string)
     bool = true
