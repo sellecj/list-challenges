@@ -5,16 +5,22 @@ def theed(list)
             count_3 += 1
         end
     end
-    if count_3 == 3
+    next_to = false
+    (list.length-1).times do |i|
+        if list[i] == 3 && list[i+1] == 3
+            next_to = true
+        end
+    end
+    if count_3 == 3 && next_to == false
         return true
     else
         return false
     end
 end
 
-# puts theed([3, 3, 5, 4, 3])
-# puts theed([3, 3, 3, 3])
-# puts theed([1, 2, 3, 4, 3])
+puts theed([3, 4, 3, 5, 3, 4, 3])
+puts theed([3, 3, 5, 7, 3])
+puts theed([3, 2, 3, 4, 3])
 
 def same_first_last(list)
     if list.length > 1 && list[0] == list[(list.length-1)]
