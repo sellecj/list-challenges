@@ -74,13 +74,13 @@ def sum(list)
 end
 
 def can_balance(list)
-    bool = false
+    balanced = false
     (list.length-1).times do |i|
         if sum(list[0..i]) == sum(list[i+1..list.length-1])
-            bool = true
+            balanced = true
         end
     end
-    return bool
+    return balanced
 end
 
 # puts can_balance([1, 2, 3, 4, 2])
@@ -161,13 +161,13 @@ end
 # puts max_span([2, 2, 3, 5, 6, 2])
 
 def g_happy(string)
-    bool = true
+    happy = true
     string.length.times do |i|
         if string[i] == "g" && !(string[i-1] == "g" || string[i+1] == "g")
-            bool = false
+            happy = false
         end
     end
-    return bool
+    return happy
 end
 
 # puts g_happy("baggy")
